@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Music Player</string>
+    <string name="alboms_action_bar_text">Alboms</string>
+    <string name="albom_name">Albom 1</string>
+    <string name="todo">TODO</string>
+    <string name="none">None</string>
+    <string name="time">5:69</string>
+    <string name="all_music">All music</string>
+    <string name="add">add</string>
+    <string name="my_alboms">My Alboms</string>
+    <string name="albom">Albom</string>
+    <string name="deny">deny</string>
+    <string name="save">save</string>
+    <string name="name">Name</string>
+    <string name="music">Music</string>
+    <string name="message">Message</string>
+    <string name="close">close</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+</resources>
