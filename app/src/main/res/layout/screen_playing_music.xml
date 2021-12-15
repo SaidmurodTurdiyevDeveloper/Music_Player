@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:gravity="center|start"
+        android:paddingStart="20dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:id="@+id/back_buttonPlaying"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:clickable="false"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/todo" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/actionBarTextPlaying"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/list_buttonPlaying"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:clickable="false"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_playlist"
+                android:contentDescription="@string/todo" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/musicImagePlaying"
+            android:layout_width="0dp"
+            android:layout_margin="60dp"
+            android:layout_height="0dp"
+            android:src="@drawable/albom_another"
+            app:layout_constraintBottom_toTopOf="@id/musicNamePlaying"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/musicNamePlaying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:textColor="@color/currentItemColor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/artistNamePlaying"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/musicImagePlaying"
+            tools:text="Waka Waka" />
+
+        <TextView
+            android:id="@+id/artistNamePlaying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/colorHidden"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/like_musicPlaying"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/musicNamePlaying"
+            tools:text="Shakira" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/like_musicPlaying"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="24dp"
+            android:background="@drawable/ic_favorite"
+            app:layout_constraintBottom_toTopOf="@id/seekbarPlaying"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/info_musicPlaying"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="24dp"
+            android:background="@drawable/ic_info"
+            app:layout_constraintBottom_toTopOf="@id/seekbarPlaying"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <SeekBar
+            android:id="@+id/seekbarPlaying"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:max="100"
+            android:progressBackgroundTint="@color/itemColor"
+            android:progressTint="@color/currentItemColor"
+            android:thumbTint="@color/currentItemColor"
+            app:layout_constraintBottom_toTopOf="@id/textCurrentDurationPlaying" />
+
+        <TextView
+            android:id="@+id/textCurrentDurationPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/currentItemColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="32:32" />
+
+        <TextView
+            android:id="@+id/textLastdurationPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/currentItemColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="32:32" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnShufflePlaying"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_shuffle"
+            android:backgroundTint="@color/colorHidden"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btnPreviosMusicPlaying"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPreviosMusicPlaying"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_previous_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnShufflePlaying"
+            app:layout_constraintRight_toLeftOf="@id/btnPlayMusicPlaying"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPlayMusicPlaying"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_play"
+            android:backgroundTint="@color/currentItemColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnPreviosMusicPlaying"
+            app:layout_constraintRight_toLeftOf="@id/btnNextMusicPlaying"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNextMusicPlaying"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_next_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnPlayMusicPlaying"
+            app:layout_constraintRight_toLeftOf="@id/btnReviewPlaying"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReviewPlaying"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_repeat_all"
+            android:backgroundTint="@color/colorHidden"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnNextMusicPlaying"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/screenSplash">
+
+    <fragment
+        android:id="@+id/screenMain"
+        tools:layout="@layout/screen_main"
+        android:name="com.example.musicplayer.ui.screens.ScreenMain"
+        android:label="ScreenMain" >
+        <action
+            android:id="@+id/openAlbom"
+            app:destination="@id/screenAlbom"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/openPlayer"
+            app:destination="@id/screenMusicPlayer"
+            app:enterAnim="@anim/open_screen"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenAlbom"
+        tools:layout="@layout/screen_alboms"
+        android:name="com.example.musicplayer.ui.screens.ScreenAlbom"
+        android:label="ScreenAlbom" >
+        <action
+            android:id="@+id/openAlbomList"
+            app:destination="@id/screenMusicList"
+            app:enterAnim="@anim/close_second_anim"
+            app:exitAnim="@anim/close_second_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenMusicPlayer"
+        tools:layout="@layout/screen_playing_music"
+        android:name="com.example.musicplayer.ui.screens.ScreenMusicPlayer"
+        android:label="ScreenMusicPlayer" >
+        <action
+            android:id="@+id/openMusicList"
+            app:destination="@id/screenCurrentList"
+            app:enterAnim="@anim/open_second"
+            app:exitAnim="@anim/close_second_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenAddMusicToAlbom"
+        tools:layout="@layout/screen_add_music_to_albom"
+        android:name="com.example.musicplayer.ui.screens.ScreenAddMusicToAlbom"
+        android:label="ScreenAddMusicToAlbom" >
+        <argument
+            android:name="Id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenMusicList"
+        tools:layout="@layout/screen_music_list"
+        android:name="com.example.musicplayer.ui.screens.ScreenMusicList"
+        android:label="ScreenMusicList" >
+        <action
+            android:id="@+id/openAddMusicScreen"
+            app:destination="@id/screenAddMusicToAlbom"
+            app:enterAnim="@anim/open_second"
+            app:exitAnim="@anim/close_second_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/openMusic"
+            app:destination="@id/screenMusicPlayer"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="Id"
+            app:argType="long" />
+        <argument
+            android:name="Move"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenCurrentList"
+        tools:layout="@layout/screen_current_music_list"
+        android:name="com.example.musicplayer.ui.screens.ScreenCurrentList"
+        android:label="ScreenCurrentList" />
+    <fragment
+        android:id="@+id/screenSplash"
+        tools:layout="@layout/screen_splash"
+        android:name="com.example.musicplayer.ui.screens.ScreenSplash"
+        android:label="ScreenSplash" >
+        <action
+            android:id="@+id/openMain"
+            app:destination="@id/screenMain"
+            app:popUpTo="@id/screenSplash"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:background="@drawable/stroce_view"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:id="@+id/albomImageItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@drawable/albom"
+            android:contentDescription="@string/todo" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textAlbomTextItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:text="@string/albom_name"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/moreSettingAlbomItem"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/ic_more"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+</LinearLayout>
